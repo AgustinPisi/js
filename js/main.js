@@ -58,7 +58,7 @@ function mostrarElTotal() {
 function restarValorDelTotal(monto) {
 
     if (monto > total) {
-        alert("El monto es mayor al total de las figuras ingresadas. Ingrese los codigos correspondientes");
+        alert("Una o más figuras no se encuentran en su carrito. Ingrese los codigos correspondientes");
     } else {
 
         total = total - monto;
