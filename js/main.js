@@ -1,52 +1,41 @@
 //  Funciones 
 
 function concatenarCodigo(codigoDeFigura) {
-
     if (codigosDeFigura !== "") {
         codigosDeFigura += ", ";
     }
-
     codigosDeFigura += codigoDeFigura;
 }
 
 
 function agregarUnaNuevaFigura() {
-
     let codigoDeFigura = pedirCodigo();
 
     while (codigoDeFigura !== "0") {
-
         switch (codigoDeFigura) {
-
             case "f1":
                 concatenarCodigo(codigoDeFigura);
                 total += 30;
                 break;
-
             case "f2":
                 concatenarCodigo(codigoDeFigura);
                 total += 40;
                 break;
-
             case "f3":
                 concatenarCodigo(codigoDeFigura);
                 total += 50;
                 break;
-
             case "f4":
                 concatenarCodigo(codigoDeFigura);
                 total += 20;
                 break;
-
             default:
                 alert("CÓDIGO INCORRECTO");
                 break;
         }
-
         //  Solicito el código nuevamente
         codigoDeFigura = pedirCodigo();
     }
-
 }
 
 
@@ -55,16 +44,16 @@ function mostrarElTotal() {
 }
 
 
-function restarValorDelTotal(monto) {
-
+function restarValorDelTotal(codigoFigura, monto) {
     if (monto > total) {
-        alert("Una o más figuras no se encuentran en su carrito. Ingrese los codigos correspondientes");
+        alert("Una o más figuras no se encuentran en su carrito. Ingrese los códigos correspondientes");
     } else {
+        total -= monto;
 
-        total = total - monto;
-
+        //  Eliminar el código de la figura del carrito
+        codigosDeFigura = codigosDeFigura.replace(codigoFigura + ', ', '');
+        codigosDeFigura = codigosDeFigura.replace(codigoFigura, '');
     }
-
 }
 
 
@@ -72,30 +61,23 @@ function quitarFigura() {
     let codigoDeFigura = pedirCodigo();
 
     while (codigoDeFigura !== "0") {
-
         switch (codigoDeFigura) {
-
             case "f1":
-                restarValorDelTotal(30);
+                restarValorDelTotal("f1", 30);
                 break;
-
             case "f2":
-                restarValorDelTotal(40);
+                restarValorDelTotal("f2", 40);
                 break;
-
             case "f3":
-                restarValorDelTotal(50);
+                restarValorDelTotal("f3", 50);
                 break;
-
             case "f4":
-                restarValorDelTotal(20);
+                restarValorDelTotal("f4", 20);
                 break;
-
             default:
                 alert("CÓDIGO INCORRECTO");
                 break;
         }
-
         //  Solicito el código nuevamente
         codigoDeFigura = pedirCodigo();
     }
@@ -113,42 +95,29 @@ function pedirCodigo() {
 
 
 
-
-
 //  Inicio del programa
-
 let codigosDeFigura = "";
 let total = 0;
 let operacion = pedirOperacion();
 
 while (operacion !== "0") {
-
-    //  Chequeo de la operación que ingresó el usuario
     switch (operacion) {
-
         case "1":
-
             agregarUnaNuevaFigura();
             break;
-
         case "2":
-
             mostrarElTotal();
             break;
-
         case "3":
             quitarFigura();
             break;
-
         default:
-
             alert("OPCIÓN INCORRECTA");
             break;
     }
-
     //  Solicito la operación nuevamente
     operacion = pedirOperacion();
-
 }
+
 
 alert("Gracias por elegir AP Collectibles!");
