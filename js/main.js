@@ -1,106 +1,38 @@
-//  Funciones 
 
-function concatenarCodigo(codigoDeFigura) {
-    codigosDeFigura += codigoDeFigura + "\n";
+
+const listaFiguras = [];
+let carrito = [];
+
+class Figura {
+    constructor(id, nombre, fabricante, precio){
+        this.id = id;
+        this.nombre = nombre;
+        this.fabricante = fabricante
+        this.precio = precio;
+    }
 }
 
+listaFiguras.push(new Figura(1,"Predator 2","NECA",30));
+listaFiguras.push(new Figura(2,"Ghostface","NECA",35));
+listaFiguras.push(new Figura(3,"Terminator","Mafex",60));
+listaFiguras.push(new Figura(4,"RoboCop","Hot Toys",200));
+listaFiguras.push(new Figura(5,"Iron-man","Hot Toys",250));
+
+
+//  Funciones 
 
 function agregarUnaNuevaFigura() {
-
-    let codigoDeFigura = pedirCodigo();
-
-    while (codigoDeFigura !== "0") {
-
-        switch (codigoDeFigura) {
-
-            case "f1":
-                concatenarCodigo(codigoDeFigura);
-                total += 30;
-                break;
-
-            case "f2":
-                concatenarCodigo(codigoDeFigura);
-                total += 40;
-                break;
-
-            case "f3":
-                concatenarCodigo(codigoDeFigura);
-                total += 50;
-                break;
-
-            case "f4":
-                concatenarCodigo(codigoDeFigura);
-                total += 20;
-                break;
-
-            default:
-                alert("CÓDIGO INCORRECTO");
-                break;
-        }
-
-        //  Solicito el código nuevamente
-        codigoDeFigura = pedirCodigo();
-    }
-
+   
 }
 
 
 function mostrarElTotal() {
-    alert("Las figuras agregadas son:\n" + codigosDeFigura + "\nEl total de las figuras es: $" + total);
-}
-
-
-function restarValorDelTotal(monto, codigo) {
-    if (codigosDeFigura.includes(codigo))  {
-        
-            total = total - monto;
-        }
-    
-    else{
-        alert("El codigo ingresado no está en la lista");
-    }
-}
-
-function quitarCodigoDeLista(codigo){
-        codigosDeFigura = codigosDeFigura.replace((codigo + "\n"), '');
+   
 }
 
 
 function quitarFigura() {
-    let codigoDeFigura = pedirCodigo();
-
-    while (codigoDeFigura !== "0") {
-
-        switch (codigoDeFigura) {
-
-            case "f1":
-                restarValorDelTotal(30, codigoDeFigura);
-                quitarCodigoDeLista(codigoDeFigura);
-                break;
-
-            case "f2":
-                restarValorDelTotal(40, codigoDeFigura);
-                quitarCodigoDeLista(codigoDeFigura);
-                break;
-
-            case "f3":
-                restarValorDelTotal(50, codigoDeFigura);
-                quitarCodigoDeLista(codigoDeFigura);
-                break;
-
-            case "f4":
-                restarValorDelTotal(20, codigoDeFigura);
-                quitarCodigoDeLista(codigoDeFigura);
-                break;
-
-            default:
-                alert("CÓDIGO INCORRECTO");
-                break;
-        }
-
-        //  Solicito el código nuevamente
-        codigoDeFigura = pedirCodigo();
-    }
+   
 }
 
 
@@ -110,10 +42,8 @@ function pedirOperacion() {
 
 
 function pedirCodigo() {
-    return prompt("Ingrese el código de la figura \nf1 - $30 \nf2 - $40 \nf3 - $50 \nf4 - $20 \n0 - SALIR");
+    return prompt("Ingrese el código de la figura \n1 \n2 \n3 \n4 \n0 - SALIR");
 }
-
-
 
 
 
@@ -127,23 +57,16 @@ while (operacion !== "0") {
 
     //  Chequeo de la operación que ingresó el usuario
     switch (operacion) {
-
         case "1":
-
             agregarUnaNuevaFigura();
             break;
-
         case "2":
-
             mostrarElTotal();
             break;
-
         case "3":
             quitarFigura();
             break;
-
         default:
-
             alert("OPCIÓN INCORRECTA");
             break;
     }
