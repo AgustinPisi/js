@@ -14,14 +14,16 @@ class Figura {
 
 function agregarUnaNuevaFigura() {
     let codigoDeFigura = pedirCodigo();
-    let figura = listaFiguras.find( obj => obj.id == codigoDeFigura);
-    if (figura) {
-        carrito.push(figura);
-    }
-    else {
-        alert("Codigo incorrecto. intente nuevamente.");
-    }
-    
+    while (codigoDeFigura != 0) {
+        let figura = listaFiguras.find( obj => obj.id == codigoDeFigura);
+        if (figura) {
+            carrito.push(figura);
+        }
+        else {
+            alert("Codigo incorrecto. intente nuevamente.");
+        }
+        codigoDeFigura = pedirCodigo();
+    }   
 }
 
 
@@ -32,23 +34,26 @@ function verFiguras(){
 
 function quitarFigura() {
     let codigoDeFigura = pedirCodigo();
-    let indice = carrito.findIndex(obj => obj.id == codigoDeFigura)
-    if (indice >= 0) {
-        carrito.splice(indice,1);  
-    }
-    else {
-        alert("No se encontró la figura en el carrito.")
+    while (codigoDeFigura != 0) {
+        let indice = carrito.findIndex(obj => obj.id == codigoDeFigura)
+        if (indice >= 0) {
+            carrito.splice(indice,1);  
+        }
+        else {
+            alert("No se encontró la figura en el carrito.")
+        }
+        codigoDeFigura = pedirCodigo();
     }
 }
 
 
 function verCarrito(){
     let carritoString = "Carrito:\n";
+    total = 0;
     for (let figura of carrito) {
         carritoString += "Nombre: " + figura.fabricante + " " + figura.nombre + " - Codigo: " + figura.id + " - Precio: $" + figura.precio + "\n";   
+        total += figura.precio;
     }
-    total = 0;
-    carrito.forEach(fig =>{ total += fig.precio;})
     alert(carritoString + "\n\nTotal: $" + total);
 }
 
