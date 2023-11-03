@@ -1,7 +1,4 @@
-
-
-const listaFiguras = [];
-let carrito = [];
+//  Objetos
 
 class Figura {
     constructor(id, nombre, fabricante, precio){
@@ -12,53 +9,47 @@ class Figura {
     }
 }
 
-listaFiguras.push(new Figura("c01","Predator 2","NECA",30));
-listaFiguras.push(new Figura("c02","Ghostface","NECA",35));
-listaFiguras.push(new Figura("c03","Terminator","Mafex",60));
-listaFiguras.push(new Figura("c04","RoboCop","Hot Toys",200));
-listaFiguras.push(new Figura("c05","Iron-man","Hot Toys",250));
-
 
 //  Funciones 
 
 function agregarUnaNuevaFigura() {
     let codigoDeFigura = pedirCodigo();
     let figura = listaFiguras.find( obj => obj.id == codigoDeFigura);
-    carrito.push(figura);
+    if (figura) {
+        carrito.push(figura);
+    }
+    else {
+        alert("Codigo incorrecto. intente nuevamente.");
+    }
+    
 }
 
-
-function mostrarElTotal() {
-   
-}
 
 function verFiguras(){
-
-    let listaString = "";
-
-    for (let figura of listaFiguras) {
-        listaString += "Nombre: " + figura.fabricante + " " + figura.nombre + " - Codigo: " + figura.id + " - Precio: $" + figura.precio + "\n";   
-    }
-
     alert(listaString);
 }
 
 
 function quitarFigura() {
     let codigoDeFigura = pedirCodigo();
-    carrito = carrito.filter(function(obj){
-        return obj.id != codigoDeFigura;
-    })
+    let indice = carrito.findIndex(obj => obj.id == codigoDeFigura)
+    if (indice >= 0) {
+        carrito.splice(indice,1);  
+    }
+    else {
+        alert("No se encontró la figura en el carrito.")
+    }
 }
 
 
 function verCarrito(){
-    let carritoString = "";
-
+    let carritoString = "Carrito:\n";
     for (let figura of carrito) {
         carritoString += "Nombre: " + figura.fabricante + " " + figura.nombre + " - Codigo: " + figura.id + " - Precio: $" + figura.precio + "\n";   
     }
-    alert(carritoString);
+    total = 0;
+    carrito.forEach(fig =>{ total += fig.precio;})
+    alert(carritoString + "\n\nTotal: $" + total);
 }
 
 function pedirOperacion() {
@@ -67,16 +58,27 @@ function pedirOperacion() {
 
 
 function pedirCodigo() {
-
     return prompt("Ingrese el código de la figura \nc01 \nc02 \nc03 \nc04 \nc05 \n0 - SALIR");
 }
 
 
 
 //  Inicio del programa
-
-let codigosDeFigura = "";
+const listaFiguras = [];
+let listaString = "";
+let carrito = [];
 let total = 0;
+
+listaFiguras.push(new Figura("c01","Predator 2","NECA",30));
+listaFiguras.push(new Figura("c02","Ghostface","NECA",35));
+listaFiguras.push(new Figura("c03","Terminator","Mafex",60));
+listaFiguras.push(new Figura("c04","RoboCop","Hot Toys",200));
+listaFiguras.push(new Figura("c05","Iron-man","Hot Toys",250));
+
+for (let figura of listaFiguras) {
+    listaString += "Nombre: " + figura.fabricante + " " + figura.nombre + " - Codigo: " + figura.id + " - Precio: $" + figura.precio + "\n";   
+}
+
 let operacion = pedirOperacion();
 
 while (operacion !== "0") {
