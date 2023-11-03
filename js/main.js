@@ -12,17 +12,19 @@ class Figura {
     }
 }
 
-listaFiguras.push(new Figura(1,"Predator 2","NECA",30));
-listaFiguras.push(new Figura(2,"Ghostface","NECA",35));
-listaFiguras.push(new Figura(3,"Terminator","Mafex",60));
-listaFiguras.push(new Figura(4,"RoboCop","Hot Toys",200));
-listaFiguras.push(new Figura(5,"Iron-man","Hot Toys",250));
+listaFiguras.push(new Figura("c01","Predator 2","NECA",30));
+listaFiguras.push(new Figura("c02","Ghostface","NECA",35));
+listaFiguras.push(new Figura("c03","Terminator","Mafex",60));
+listaFiguras.push(new Figura("c04","RoboCop","Hot Toys",200));
+listaFiguras.push(new Figura("c05","Iron-man","Hot Toys",250));
 
 
 //  Funciones 
 
 function agregarUnaNuevaFigura() {
-   
+    let codigoDeFigura = pedirCodigo();
+    let figura = listaFiguras.find( obj => obj.id == codigoDeFigura);
+    carrito.push(figura);
 }
 
 
@@ -30,19 +32,43 @@ function mostrarElTotal() {
    
 }
 
+function verFiguras(){
 
-function quitarFigura() {
-   
+    let listaString = "";
+
+    for (let figura of listaFiguras) {
+        listaString += "Nombre: " + figura.fabricante + " " + figura.nombre + " - Codigo: " + figura.id + " - Precio: $" + figura.precio + "\n";   
+    }
+
+    alert(listaString);
 }
 
 
+function quitarFigura() {
+    let codigoDeFigura = pedirCodigo();
+    carrito = carrito.filter(function(obj){
+        return obj.id != codigoDeFigura;
+    })
+}
+
+
+function verCarrito(){
+    let carritoString = "";
+
+    for (let figura of carrito) {
+        carritoString += "Nombre: " + figura.fabricante + " " + figura.nombre + " - Codigo: " + figura.id + " - Precio: $" + figura.precio + "\n";   
+    }
+    alert(carritoString);
+}
+
 function pedirOperacion() {
-    return prompt("¿Qué operación desea realizar? \n1- Ingresar una nueva figura al carrito \n2- Ver las figuras que tengo en el carrito \n3- Quitar una figura del carrito \n0- SALIR del carrito");
+    return prompt("¿Qué operación desea realizar? \n1- Ver listado de figuras disponibles \n2- Agregar figuras al carrito \n3- Ver las figuras que tengo en el carrito \n4- Quitar una figura del carrito \n0- SALIR del carrito");
 }
 
 
 function pedirCodigo() {
-    return prompt("Ingrese el código de la figura \n1 \n2 \n3 \n4 \n0 - SALIR");
+
+    return prompt("Ingrese el código de la figura \nc01 \nc02 \nc03 \nc04 \nc05 \n0 - SALIR");
 }
 
 
@@ -58,12 +84,15 @@ while (operacion !== "0") {
     //  Chequeo de la operación que ingresó el usuario
     switch (operacion) {
         case "1":
-            agregarUnaNuevaFigura();
+            verFiguras();
             break;
         case "2":
-            mostrarElTotal();
+            agregarUnaNuevaFigura();
             break;
         case "3":
+            verCarrito();
+            break;
+        case "4":
             quitarFigura();
             break;
         default:
