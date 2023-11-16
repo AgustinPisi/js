@@ -35,7 +35,9 @@ const listaFiguras = [];
 
 
 listaFiguras.push(new Figura("F01","Ultimate Jason Vorhees 6 FT13","NECA",35, "https://d22fxaf9t8d39k.cloudfront.net/2c4bd9ecf84951f89569fe408ee58ec31a2295d5c828b1a7554dc3170d0e05c3106125.webp", "NECA Ultimate FT13 6, Jason Voorhees"));
-listaFiguras.push(new Figura("F02","Ultimate Shaman Predator 2","NECA",42, "https://d22fxaf9t8d39k.cloudfront.net/2c4bd9ecf84951f89569fe408ee58ec31a2295d5c828b1a7554dc3170d0e05c3106125.webp", "NECA Ultimate FT13 6, Jason Voorhees"));
+listaFiguras.push(new Figura("F02","Ultimate Shaman Predator 2","NECA",42, "https://acdn.mitiendanube.com/stores/002/369/238/products/s-l500_a71854f8-4147-4599-b1f3-614b7e39a30a_grande1-c5c1bbf68eb0379fe116810032635859-640-0.jpg", "NECA Ultimate Predator 2, Shaman Predator"));
+listaFiguras.push(new Figura("F03","Ultimate Freddy Krueger Parte 1","NECA",32, "https://zappcomics.com/cdn/shop/files/freddy12.jpg?v=1694635181", "NECA Ultimate A Nightmare on Elm Street"));
+listaFiguras.push(new Figura("F04","Mezco The Punisher (Live Action)","Mezco",90, "https://m.media-amazon.com/images/I/51oeqqocCRL.jpg", "Mezco 1:12 The Punisher (Netflix)"));
 console.log(listaFiguras);
 
 let contenedorFiguras = document.getElementById("cartasCentradas");

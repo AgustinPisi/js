@@ -51,7 +51,7 @@ function crearTabla(){
 }
 
 let botonVaciarCarrito = document.createElement("button");
-botonVaciarCarrito.classList="btn btn-warning";
+botonVaciarCarrito.classList="btn btn-warning botonCarritoStyle";
 botonVaciarCarrito.innerHTML="Vaciar carrito";
 botonVaciarCarrito.addEventListener("click", function(){
     localStorage.clear();

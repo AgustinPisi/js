@@ -42,6 +42,10 @@
 
 }
 
+#tablaCarrito{
+  margin-top: 250px;
+}
+
 .colorTituloTablas th {
 
   color: #ffd900;
@@ -91,6 +95,32 @@ h2 {
   padding: 10px;
   margin-top: 8px;
 }
+
+.footerMargin{
+  margin-top: 250px;
+}
+
+.MarginCarritoF{
+margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+#main-carrito{
+  margin-bottom: 330px;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#botonCarritoStyle{
+  margin-bottom: 150px;
+  flex-wrap: wrap;
+  font-family: "Roboto Condensed";
+  font-weight:700;
+
+}
+
 
 /*SECCION INDEX */
 #carouselExampleFade {
