@@ -37,6 +37,18 @@
   font-family: "Roboto Condensed";
 }
 
+#carritoIcon {
+  margin-right: 10px;
+
+}
+
+.colorTituloTablas th {
+
+  color: #ffd900;
+  font-weight: bold;
+  
+}
+
 body {
   background-color: black;
 }
