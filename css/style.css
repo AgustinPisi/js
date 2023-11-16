@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Oswald&family=Roboto+Condensed:wght@300;400;700&display=swap");
+.estilo-texto {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "Roboto Condensed";
+  font-weight: bolder;
+  color: #ffd900;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.estilo-texto2 {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "Roboto Condensed";
+  font-weight: bolder;
+  color: #000000;
+  background-color: #d68227;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.up-scale:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
+}
+
+.cartas-noticias .card:hover {
+  cursor: pointer;
+}
+
+#header {
+  font-family: "Roboto Condensed";
+}
+
+body {
+  background-color: black;
+}
+
+.nav-link:hover {
+  font-weight: bolder;
+  background-color: rgb(0, 0, 0);
+}
+
+h1 {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "Roboto Condensed";
+  font-weight: bolder;
+  color: #000000;
+  background-color: #d68227;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: "Roboto Condensed";
+  font-weight: bolder;
+  color: #ffd900;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.footer {
+  color: #ffd900;
+  text-align: center;
+  font-family: "Roboto Condensed";
+  font-weight: lighter;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+/*SECCION INDEX */
+#carouselExampleFade {
+  margin-top: 25px;
+  margin-bottom: 80px;
+}
+
+.carousel-control-prev-icon {
+  filter: brightness(0.5) sepia(1) hue-rotate(6deg) saturate(5);
+}
+
+.carousel-control-next-icon {
+  filter: brightness(0.5) sepia(1) hue-rotate(6deg) saturate(5);
+}
+
+#galeriaDeFotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#galeriaDeFotos img {
+  width: 680px;
+  padding: 15px;
+}
+
+@media (min-width: 100px) {
+  #galeriaDeFotos img {
+    width: 100%;
+  }
+}
+@media (min-width: 300px) {
+  #galeriaDeFotos img {
+    width: 80%;
+  }
+}
+@media (min-width: 680px) {
+  #galeriaDeFotos img {
+    width: 680px;
+  }
+}
+@media (max-width: 450px) {
+  #main-index h1 {
+    font-size: larger;
+  }
+}
+/*SECCION REVIEWS */
+#main-reviews {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#review-content {
+  width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.card-img-top {
+  margin-top: 10px;
+}
+
+.grilla-explicita {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  overflow: hidden;
+  margin: auto;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.grilla-explicita div {
+  border: 2px solid #ffd900;
+  margin: 2px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px;
+}
+.grilla-explicita div img {
+  width: 100%;
+}
+
+@media (max-width: 375px) {
+  #main-reviews h2 {
+    font-size: larger;
+  }
+}
+/* SECCION NOTICIAS */
+#main-noticias {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#noticias-content {
+  width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 5px;
+  padding-bottom: 0px;
+}
+#noticias-content .cartas-noticias {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* SECCION CONTACTO */
+#main-contacto {
+  padding: 0px;
+  background-color: rgb(0, 0, 0);
+}
+#main-contacto #texto-contacto {
+  color: #d68227;
+  background-color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  font-size: x-large;
+  position: relative;
+  padding: 20px;
+}
+
+form {
+  color: #d68227;
+  text-align: center;
+  font-family: "Roboto Condensed";
+  background-color: rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+}
+
+#main-tienda {
+  margin-top: 25px;
+}
+
+#tienda-content {
+  width: 100%;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.precioFigura {
+  color: #ffd900;
+  font-weight: bold;
+  margin-left: 2rem;
+  font-size: large;
+}
