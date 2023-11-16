@@ -1,6 +1,8 @@
 
 let listaFiguras=JSON.parse(localStorage.getItem("listaFiguras"));
 
+let contenedorTabla = document.getElementById("main-carrito");
+
 let idsCarrito = localStorage.getItem("idCarrito");
 let idsCarritoLista = []
 if (idsCarrito) {
@@ -14,7 +16,7 @@ else {
 console.log(listaFiguras);
 
 function crearTabla(){
-    let principioTabla = `<table class="table table-striped table-dark">
+    let principioTabla = `<table class="table table-striped table-dark" id="tablaCarrito">
 <thead>
   <tr class="colorTituloTablas" >
     <th scope="col">Id</th>
@@ -45,6 +47,15 @@ function crearTabla(){
     filas += fila;
     }
     let tabla = principioTabla + filas + finalTabla;
-    let contenedorTabla = document.getElementById("main-carrito");
     contenedorTabla.innerHTML = tabla;
 }
+
+let botonVaciarCarrito = document.createElement("button");
+botonVaciarCarrito.classList="btn btn-warning";
+botonVaciarCarrito.innerHTML="Vaciar carrito";
+botonVaciarCarrito.addEventListener("click", function(){
+    localStorage.clear();
+    let tabla = document.getElementById("tablaCarrito");
+    tabla.remove(); 
+})
+contenedorTabla.appendChild(botonVaciarCarrito);
