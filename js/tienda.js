@@ -23,11 +23,39 @@ function agregarAlCarrito(idFigura) {
     } else {
         localStorage.setItem("idCarrito", idFigura);
     }
+    
+    Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Producto agregado al carrito!",
+        showConfirmButton: false,
+        timer: 1500,
+        width: "310px",
+        color: "#ffd900",
+        background: "#1f2124",
+      });
+
+      actualizarIconoCarrito();
+     
 }
 
 
 
 //  Inicio del programa
+
+function actualizarIconoCarrito() {
+    let linkCarrito = document.getElementById("carritoIcon");
+    let elementosCarrito = localStorage.getItem("idCarrito");
+    if (elementosCarrito) {
+        let lista = elementosCarrito.split(",");
+        linkCarrito.innerHTML = linkCarrito.innerHTML + `<span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+    ${lista.length}
+    <span class="visually-hidden">unread messages</span>
+  </span>`;
+    }
+}
+
+actualizarIconoCarrito();
 
 let tarjetas = "";
 

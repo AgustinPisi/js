@@ -278,3 +278,19 @@ form {
 #tablaCarrito{
   margin-top: 50px;
 }
+
+.swal2-confirm.swal2-styled.swal2-default-outline{
+  color: #FFC900
+}
+
+.swal2-confirm.swal2-styled.swal2-default-outline:focus{
+  box-shadow: none;
+
+}
+
+.swal2-confirm.swal2-styled.swal2-default-outline:hover{
+  border: 2px solid #ffd900;
+  border-radius: 5px;
+
+
+}

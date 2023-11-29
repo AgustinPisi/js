@@ -1,4 +1,25 @@
 
+function actualizarIconoCarrito() {
+  let linkCarrito = document.getElementById("carritoIcon");
+  let elementosCarrito = localStorage.getItem("idCarrito");
+  if (elementosCarrito) {
+      let lista = elementosCarrito.split(",");
+      linkCarrito.innerHTML = linkCarrito.innerHTML + `<span id="badge" class="position-absolute start-100 translate-middle badge rounded-pill bg-danger">
+  ${lista.length}
+  <span class="visually-hidden">unread messages</span>
+</span>`;
+  }
+  else {
+    let indicador = document.getElementById("badge");
+    if (indicador != null) {
+      indicador.remove();
+    }
+  }
+}
+
+actualizarIconoCarrito();
+
+
 let listaFiguras=JSON.parse(localStorage.getItem("listaFiguras"));
 
 let contenedorTabla = document.getElementById("main-carrito");
@@ -11,7 +32,17 @@ if (idsCarrito) {
 
 }
 else {
- alert("No hay elementos en tu carrito.")
+  Swal.fire({
+    icon: "warning",
+    iconColor: "#ffc900",
+    title: "No tiene productos en su carrito",
+    text: "Agregue productos para seguir comprando!",
+    color: "#ffd900",
+    background: "#1f2124",
+    confirmButtonColor: "black",
+    confirmButtonText: "OK",
+    backdrop: "rgba(0,0,0,0.8)",
+  });
 }
 console.log(listaFiguras);
 
@@ -56,6 +87,10 @@ botonVaciarCarrito.innerHTML="Vaciar carrito";
 botonVaciarCarrito.addEventListener("click", function(){
     localStorage.clear();
     let tabla = document.getElementById("tablaCarrito");
-    tabla.remove(); 
+    if (tabla != null) {
+      tabla.remove();
+    }
+   
+    actualizarIconoCarrito(); 
 })
 contenedorTabla.appendChild(botonVaciarCarrito);
