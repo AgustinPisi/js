@@ -24,15 +24,23 @@ function agregarAlCarrito(idFigura) {
         localStorage.setItem("idCarrito", idFigura);
     }
     
-    Swal.fire({
+    const Toast = Swal.mixin({
+        toast: true,
         position: "top-end",
-        icon: "success",
-        title: "Producto agregado al carrito!",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 3000,
+        timerProgressBar: true,
         width: "310px",
         color: "#ffd900",
         background: "#1f2124",
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Agregado al carrito!"
       });
 
       actualizarIconoCarrito();
