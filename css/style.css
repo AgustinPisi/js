@@ -294,3 +294,33 @@ form {
 
 
 }
+
+#redesContacto{
+text-align: center;
+
+}
+
+.bi.bi-github, .bi.bi-linkedin{
+font-size: 3.5rem;
+color: #343a40;
+
+}
+
+.bi.bi-github:hover, .bi.bi-linkedin:hover{
+  color: #ffd900;
+
+  }
+
+  .footerPerfil{
+    background-color: #FFC900;
+    font-weight: bold;
+  }
+
+
+  .swal2-close{
+    color: #FFC900;
+  }
+
+  .swal2-close:focus{
+    box-shadow: none;
+  }

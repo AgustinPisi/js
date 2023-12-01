@@ -9,7 +9,7 @@ class Figura {
         this.imagenURL = imagenURL;
         this.descripcion = descripcion;
     }
-}
+};
 
 
 //  Funciones 
@@ -45,11 +45,7 @@ function agregarAlCarrito(idFigura) {
 
       actualizarIconoCarrito();
      
-}
-
-
-
-//  Inicio del programa
+};
 
 function actualizarIconoCarrito() {
     let linkCarrito = document.getElementById("carritoIcon");
@@ -61,7 +57,13 @@ function actualizarIconoCarrito() {
     <span class="visually-hidden">unread messages</span>
   </span>`;
     }
-}
+};
+
+
+
+//  Inicio del programa
+
+
 
 actualizarIconoCarrito();
 
@@ -89,7 +91,7 @@ for (let element of listaFiguras){
 
 tarjetas += tarjeta
 
-}
+};
 
 contenedorFiguras.innerHTML = tarjetas;
 
