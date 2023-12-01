@@ -39,6 +39,10 @@
 
 #carritoIcon {
   margin-right: 10px;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 3px;
 
 }
 
@@ -323,4 +327,9 @@ color: #343a40;
 
   .swal2-close:focus{
     box-shadow: none;
+  }
+
+  .bi.bi-cart4 {
+
+    font-size: 25px;
   }
